@@ -1,62 +1,50 @@
 package com.engeto;
-import com.engeto.Guests;
-import com.engeto.Rooms;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import com.engeto.TypeOfVacation;
+import static com.engeto.TypeOfVacation.Recreational_stay;
+import static com.engeto.TypeOfVacation.Working_stay;
+import com.engeto.Guest;
+import com.engeto.Room;
 
 
 public class Reservation {
-    private Rooms rooms;
-    private Guests guests;
+    private Room room;
+    private Guest guest;
 
-
-    private List<Guests> listOfGuests;
+    private List<Guest> listOfGuests;
 
     private LocalDate dateStart;
     private LocalDate dateEnd;
-    private Boolean isItLeasureTravel;
+    private TypeOfVacation typeOfVacation;
 
-
-
-    public Reservation(Rooms rooms, Guests guests, LocalDate dateStart, LocalDate dateEnd,
-                       Boolean isItLeasureTravel) {
-        this.rooms = rooms;
-        this.guests = guests ;
-        this.dateStart = dateStart;
-        this.dateEnd = dateEnd;
-        this.isItLeasureTravel = isItLeasureTravel;
-
-
-    }
-
-    public Reservation(Rooms rooms, Guests guests, List<Guests> listOfGuests,LocalDate dateStart, LocalDate dateEnd,
-                       Boolean isItLeasureTravel) {
-        this.rooms = rooms ;
-        this.guests = guests;
+    public Reservation(Room room, List<Guest> listOfGuests, LocalDate dateStart,
+                       LocalDate dateEnd, TypeOfVacation typeOfVacation) {
+        this.room = room;
         this.listOfGuests = listOfGuests;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
-        this.isItLeasureTravel = isItLeasureTravel;
-
-
+        this.typeOfVacation = typeOfVacation;
     }
 
 
     ///region getter
 
-    public Rooms getRooms() {
-        return rooms;
+    public Room getRoom() {
+        return room;
     }
 
-    public Guests getGuests() {
-        return guests;
+    public Guest getGuest() {
+        return guest;
     }
 
-    public List<Guests> getListOfGuests() {
+    public List<Guest> getListOfGuests() {
         return listOfGuests;
+
     }
+
 
     public LocalDate getDateStart() {
         return dateStart;
@@ -66,23 +54,21 @@ public class Reservation {
         return dateEnd;
     }
 
-    public Boolean getItLeasureTravel() {
-        return isItLeasureTravel;
+    public TypeOfVacation getTypeOfVacation() {
+        return typeOfVacation;
     }
 
 
     ///endregion getter
 
-    public String toString() {
-        return "Reservation: " +
-                "Room: " + rooms.getNumberOFTheRoom() +
-                ", Guest: " + guests.getName() +
-                ", Date start: " + dateStart +
-                ", Date end: " + dateEnd +
-                ", Is it leasure travel: " + isItLeasureTravel +
-                '.';
-    }
+
+}
 
 
 
-    }
+
+
+
+
+
+

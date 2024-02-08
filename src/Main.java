@@ -1,93 +1,81 @@
-import com.engeto.Guests;
+import com.engeto.Guest;
 import com.engeto.Reservation;
-import com.engeto.Rooms;
+import com.engeto.Room;
+import com.engeto.TypeOfVacation;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.engeto.TypeOfVacation.Recreational_stay;
+import static com.engeto.TypeOfVacation.Working_stay;
+
 public class Main {
     public static void main(String[] args) {
 
-        //region Pokoje
+        //Pokoje:
+        Room room1 = new Room(1, 1, true,
+                true, 1000);
+        Room room2 = new Room(2, 1, true,
+                true, 1000);
+        Room room3 = new Room(3, 3, false,
+                true, 2400);
 
-        Rooms room1 = new Rooms(1, 1, true,
-                        true, 1000);
-        Rooms room2 = new Rooms(2, 1, true,
-                        true, 1000);
-        Rooms room3 = new Rooms(3, 3, false,
-                        true, 2400);
-
-        List<Rooms> listOfRooms = new ArrayList<>();
+        List<Room> listOfRooms = new ArrayList<>();
         listOfRooms.add(room1);
         listOfRooms.add(room2);
         listOfRooms.add(room3);
 
-        for (Rooms rooms : listOfRooms){
-            System.out.print("Room number " + rooms.getNumberOFTheRoom() + ", ");
-            System.out.print("numbers of beds are " + rooms.getBeds() + ", ");
-            System.out.print("room has balcony: " + rooms.getBalcony() + ", ");
-            System.out.print("room has the sea view: " + rooms.getSea() + ", ");
-            System.out.println("room's price: "+ rooms.getPricePerNight() + " CZK.");
+        for (Room room : listOfRooms) {
+            System.out.print("Room number " + room.getNumberOFTheRoom() + ", ");
+            System.out.print("numbers of beds are " + room.getBeds() + ", ");
+            System.out.print("room has balcony: " + room.getBalcony() + ", ");
+            System.out.print("room has the sea view: " + room.getSea() + ", ");
+            System.out.println("room's price: " + room.getPricePerNight() + " CZK.");
         }
 
-        //endregion Pokoje
 
-        //region Hosté
-
-        Guests firstGuest = new Guests("Adéla Malíková",
+        //Hosté
+        Guest firstGuest = new Guest("Adéla Malíková",
                 LocalDate.of(1993, 3, 13));
-        Guests secondGuest = new Guests("Jan Dvořáček",
+        Guest secondGuest = new Guest("Jan Dvořáček",
                 LocalDate.of(1995, 5, 5));
-        List<Guests> listOfGuests = new ArrayList<>();
+        List<Guest> listOfGuests = new ArrayList<>();
         listOfGuests.add(firstGuest);
         listOfGuests.add(secondGuest);
 
 
-        for (Guests guests : listOfGuests) {
-            System.out.print(guests.getName());
-            System.out.println(" (" + guests.getDateOfBirth() + ") ");
+        for (Guest guest : listOfGuests) {
+            System.out.print(guest.getName());
+            System.out.println(" (" + guest.getDateOfBirth() + ") ");
 
         }
 
-        //endregion Hosté
 
         //Rezervace
-        Reservation reservation1 = new Reservation (room1,firstGuest, LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 21), true);
-
-        System.out.println(reservation1.toString());
-
-        //nejde mi ulozit druheho hosta ze seznamu:
-        Reservation reservation2 = new Reservation(room3, firstGuest, listOfGuests.get(1), LocalDate.of(2021, 9, 1),
-                LocalDate.of(2021, 9, 14), true);
+        Reservation reservation1 = new Reservation(room1, List.of(firstGuest), LocalDate.of(2021, 7, 19),
+                LocalDate.of(2021, 7, 21), Working_stay);
+        Reservation reservation2 = new Reservation(room3, List.of(firstGuest, secondGuest), LocalDate.of(2021, 9, 1),
+                LocalDate.of(2021, 9, 14), Recreational_stay);
 
 
 
 
 
+        List<Reservation> listOfReservation = new ArrayList<>();
+        listOfReservation.add(reservation1);
+        listOfReservation.add(reservation2);
 
-        //List<Reservation> listOfReservation = new ArrayList<>();
-        //listOfReservation.add(reservation1);
 
-        //for (Reservation reservation : listOfReservation) {
-            //System.out.print(reservation.getRoom());
-           // System.out.println(" (" + reservation.getDateOfBirth() + ") ");
+        for (Reservation reservation : listOfReservation){
+            System.out.println("List of reservation: " + "\t" + reservation.getRoom().getNumberOFTheRoom() +
+                    ", " + reservation.getListOfGuests() + ", " + reservation.getDateStart() +
+                            ", " + reservation.getDateEnd() + ", " + reservation.getTypeOfVacation() + ".");
+        }
+
 
         }
 
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-        }

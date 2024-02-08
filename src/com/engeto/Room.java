@@ -1,13 +1,13 @@
 package com.engeto;
 
-public class Rooms {
-    Integer numberOFTheRoom;
-    Integer beds;
-    Boolean balcony;
-    Boolean sea;
-    Integer pricePerNight;
+public class Room {
+    private Integer numberOFTheRoom;
+   private  Integer beds;
+    private Boolean balcony;
+    private Boolean sea;
+    private Integer pricePerNight;
 
-    public Rooms(Integer number, Integer beds, Boolean balcony, Boolean sea, Integer pricePerNight) {
+    public Room(Integer number, Integer beds, Boolean balcony, Boolean sea, Integer pricePerNight) {
         this.numberOFTheRoom = number;
         this.beds = beds;
         this.balcony = balcony;

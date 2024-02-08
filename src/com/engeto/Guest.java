@@ -2,15 +2,15 @@ package com.engeto;
 
 import java.time.LocalDate;
 
-public class Guests {
+public class Guest {
     //prvni host
-    String name;
+     String name;
     LocalDate dateOfBirth;
 
 
 
 
-    public Guests(String name, LocalDate dateOfBirth) {
+    public Guest(String name, LocalDate dateOfBirth) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
 
