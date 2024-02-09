@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efe57a8c-499f-4588-805b-8a3042cc3c80" name="Changes" comment="Nedaří se mi přidat druhého hosta ze seznamu">
-      <change afterPath="$PROJECT_DIR$/src/com/engeto/TypeOfVacation.java" afterDir="false" />
+    <list default="true" id="efe57a8c-499f-4588-805b-8a3042cc3c80" name="Changes" comment="Opraveno">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/Guests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Guest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +61,20 @@
       <option name="project" value="LOCAL" />
       <updated>1707143094032</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Opraveno">
+      <option name="closed" value="true" />
+      <created>1707411173093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707411173094</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nedaří se mi přidat druhého hosta ze seznamu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nedaří se mi přidat druhého hosta ze seznamu" />
+    <MESSAGE value="Opraveno" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opraveno" />
   </component>
 </project>

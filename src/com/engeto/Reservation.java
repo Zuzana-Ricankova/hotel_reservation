@@ -1,5 +1,6 @@
 package com.engeto;
 
+import java.awt.print.Printable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,23 @@ public class Reservation {
 
 
     ///endregion getter
+
+
+    public String toString() {
+
+
+
+        return "Reservation: " +
+                "Room: " + room.getNumberOFTheRoom() +
+                ", Guest: " + listOfGuests.toString() +
+                ", Date start: " + dateStart +
+                ", Date end: " + dateEnd +
+                ", Is it leasure travel: " + getTypeOfVacation() +
+                '.';
+
+    }
+
+
 
 
 }

@@ -59,19 +59,22 @@ public class Main {
                 LocalDate.of(2021, 9, 14), Recreational_stay);
 
 
-
+        System.out.println(reservation1.toString());
+        System.out.println("....");
+        System.out.println(reservation2.toString());
 
 
         List<Reservation> listOfReservation = new ArrayList<>();
         listOfReservation.add(reservation1);
         listOfReservation.add(reservation2);
-
+        System.out.println("....");
 
         for (Reservation reservation : listOfReservation){
-            System.out.println("List of reservation: " + "\t" + reservation.getRoom().getNumberOFTheRoom() +
-                    ", " + reservation.getListOfGuests() + ", " + reservation.getDateStart() +
-                            ", " + reservation.getDateEnd() + ", " + reservation.getTypeOfVacation() + ".");
+
+
+            System.out.println("List of reservation: " + reservation.toString());
         }
+
 
 
         }

@@ -40,4 +40,9 @@ public class Guest {
     ///endregion getter and setter
 
 
+    @Override
+    public String toString() {
+        return "name: " + name +
+                ", date of birth: " + dateOfBirth ;
+    }
 }
