@@ -5,9 +5,9 @@ public class Room {
    private  Integer beds;
     private Boolean balcony;
     private Boolean sea;
-    private Integer pricePerNight;
+    private int pricePerNight;
 
-    public Room(Integer number, Integer beds, Boolean balcony, Boolean sea, Integer pricePerNight) {
+    public Room(Integer number, Integer beds, Boolean balcony, Boolean sea, int pricePerNight) {
         this.numberOFTheRoom = number;
         this.beds = beds;
         this.balcony = balcony;
@@ -51,11 +51,11 @@ public class Room {
         this.sea = sea;
     }
 
-    public Integer getPricePerNight() {
+    public int getPricePerNight() {
         return pricePerNight;
     }
 
-    public void setPricePerNight(Integer pricePerNight) {
+    public void setPricePerNight(int pricePerNight) {
         this.pricePerNight = pricePerNight;
     }
 

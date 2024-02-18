@@ -1,11 +1,14 @@
 package com.engeto;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Guest {
     //prvni host
-     String name;
-    LocalDate dateOfBirth;
+    private String name;
+    private LocalDate dateOfBirth;
+
 
 
 
@@ -15,7 +18,11 @@ public class Guest {
         this.dateOfBirth = dateOfBirth;
 
     }
+    public Guest(String name) {
+        this.name = name;
 
+
+    }
 
 
     ///region getter and setter
@@ -40,9 +47,11 @@ public class Guest {
     ///endregion getter and setter
 
 
+
+
     @Override
     public String toString() {
-        return "name: " + name +
-                ", date of birth: " + dateOfBirth ;
+        return   name +
+                ", (" + dateOfBirth + ")";
     }
 }
