@@ -3,25 +3,15 @@ package com.engeto;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.engeto.TypeOfVacation.Working_stay;
-import static com.engeto.TypeOfVacation.Recreational_stay;
+import static com.engeto.TypeOfVacation.WORKING_STAY;
+import static com.engeto.TypeOfVacation.RECREATIONAL_STAY;
 
 
 
 public class ReservationManager {
     private List<Reservation> listOfReservation = new ArrayList<>();
     private List<Guest> listOfGuests;
-
-    private int numberOfReservation;
-    private int numberOfWorkingReservation;
-    private Integer averageGuests;
-    private String recreationalReservation;
-    private int totalCountOfReservationWithOneGuest;
-    private int totalCountOfReservationWithTwoGuests;
-    private int totalCountOfReservationWithMoreThanTwoGuests;
-
-
-
+    private Double averageGuests;
 
 
 
@@ -53,7 +43,7 @@ public class ReservationManager {
     public int getNumberOfWorkingReservation() {
         int count = 0;
         for (Reservation reservation : listOfReservation) {
-            if (reservation.getTypeOfVacation().equals(Working_stay)){
+            if (reservation.getTypeOfVacation().equals(WORKING_STAY)){
                 count++;
             }
         }
@@ -62,17 +52,24 @@ public class ReservationManager {
 
 
 
-    public Integer getAverageGuests() {
+    public Double getAverageGuests() {
+        int totalNumberOfGuests = 0;
         for (Reservation reservation : listOfReservation) {
-            averageGuests = (reservation.getTotalNumberOfGuests())/(listOfReservation.size());
-        } return averageGuests;
+            if (reservation.getNumberOfGuests() == 1) {
+                totalNumberOfGuests++;
+                if (reservation.getNumberOfGuests()==2){totalNumberOfGuests = totalNumberOfGuests +2;
+
+            }
+        }}
+
+     return averageGuests = (double) totalNumberOfGuests / listOfReservation.size();
     }
 
 
     public String getRecreationalReservation() {
         int i = 0;
         for (Reservation reservation : listOfReservation) {
-            if (reservation.getTypeOfVacation().equals(Recreational_stay) && i < 8) {
+            if (reservation.getTypeOfVacation().equals(RECREATIONAL_STAY) && i < 8) {
                 i ++;
                 {
                     System.out.println(i + " " + reservation.toString());
@@ -82,38 +79,19 @@ public class ReservationManager {
         return "";
     }
 
-//    Celkový počet rezervací s jedním hostem
-    public int getTotalCountOfReservationWithOneGuest() {
-        int l = 0;
+    public int getTotalCountOfReservationWithNumOfGuests(int guestCount) {
+        int numberOfReservations = 0;
         for (Reservation reservation : listOfReservation) {
-            if(reservation.getNumberOfGuests() == 1 ){
-                l++;
+            if(reservation.getNumberOfGuests() == guestCount) {
+                numberOfReservations++; {if (reservation.getNumberOfGuests() == guestCount && guestCount>2){
+                    numberOfReservations = 0;
+                }
+                }
             }
         }
-        return  l;
+        return numberOfReservations;
     }
 
-//    Celkový počet rezervací se dvěma  hosty
-    public int getTotalCountOfReservationWithTwoGuests(){
-        int n = 0;
-        for (Reservation reservation : listOfReservation) {
-            if (reservation.getNumberOfGuests() == 2) {
-                n++;
-            }
-        }
-        return n;
-    }
-
-//    Celkový počet rezervací s více než dvěma  hosty
-    public int getTotalCountOfReservationWithMoreThanTwoGuests() {
-        int r = 0;
-        for (Reservation reservation : listOfReservation) {
-            if (reservation.getNumberOfGuests() > 2) {
-                r++;
-            }
-        }
-        return r;
-    }
 
     @Override
     public String toString() {

@@ -1,14 +1,12 @@
 import com.engeto.*;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import com.engeto.ReservationManager;
 
-import static com.engeto.TypeOfVacation.Recreational_stay;
-import static com.engeto.TypeOfVacation.Working_stay;
+import static com.engeto.TypeOfVacation.RECREATIONAL_STAY;
+import static com.engeto.TypeOfVacation.WORKING_STAY;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,14 +23,6 @@ public class Main {
         listOfRooms.add(room1);
         listOfRooms.add(room2);
         listOfRooms.add(room3);
-
-//        for (Room room : listOfRooms) {
-//            System.out.print("Room number " + room.getNumberOFTheRoom() + ", ");
-//            System.out.print("numbers of beds are " + room.getBeds() + ", ");
-//            System.out.print("room has balcony: " + room.getBalcony() + ", ");
-//            System.out.print("room has the sea view: " + room.getSea() + ", ");
-//            System.out.println("room's price: " + room.getPricePerNight() + " CZK.");
-//        }
 
 
         //Hosté
@@ -54,39 +44,16 @@ public class Main {
         listOfGuests.add(fifthGuest);
 
 
-//        for (Guest guest : listOfGuests) {
-//            System.out.print(guest.getName());
-//            System.out.println(" (" + guest.getDateOfBirth() + ") ");
-//
-//        }
-
-
         //Rezervace
         Reservation reservation1 = new Reservation(1, room1, List.of(firstGuest), 1, LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 21), Working_stay);
+                LocalDate.of(2021, 7, 21), WORKING_STAY);
         Reservation reservation2 = new Reservation(2, room3, List.of(firstGuest, secondGuest), 2, LocalDate.of(2021, 9, 1),
-                LocalDate.of(2021, 9, 14), Recreational_stay);
-
-
-
-//        System.out.println(reservation1.toString());
-//        System.out.println("....");
-//        System.out.println(reservation2.toString());
+                LocalDate.of(2021, 9, 14), RECREATIONAL_STAY);
 
 
         List<Reservation> listOfReservation = new ArrayList<>();
         listOfReservation.add(reservation1);
         listOfReservation.add(reservation2);
-
-
-
-
-
-
-//        for (Reservation reservation : listOfReservation){
-//            System.out.println("List of reservation: " + reservation.toString());
-//        }
-
 
 
         //ReservationManager
@@ -102,21 +69,21 @@ public class Main {
         System.out.println(reservationManager.getAverageGuests());
 
         reservationManager.addReservation(new Reservation(3, room3, List.of(thirdGuest), 1,
-                LocalDate.of(2023,6,1), LocalDate.of(2023,6,7), Working_stay));
+                LocalDate.of(2023,6,1), LocalDate.of(2023,6,7), WORKING_STAY));
         reservationManager.addReservation(new Reservation(4, room2, List.of(forthGuest), 1, LocalDate.of(2023, 7,18),
-                LocalDate.of(2023,7,21), Recreational_stay));
+                LocalDate.of(2023,7,21), RECREATIONAL_STAY));
 
         System.out.println("......");
         for (int i = 1; i <= 10; i++) {
             reservationManager.addReservation(new Reservation(4 + i, room2, List.of(fifthGuest), 1,
                     LocalDate.of(2023, 7,31).plusDays(i),
-                    LocalDate.of(2023,8,1).plusDays(i), Recreational_stay));
+                    LocalDate.of(2023,8,1).plusDays(i), RECREATIONAL_STAY));
         }
 
 
         reservationManager.addReservation(new Reservation(15, room3, List.of(fifthGuest), 1,
                 LocalDate.of(2023,8,1),
-                LocalDate.of(2023, 8,31), Recreational_stay));
+                LocalDate.of(2023, 8,31), RECREATIONAL_STAY));
 
         System.out.println(".....");
         System.out.println(reservationManager.toString());
@@ -128,18 +95,6 @@ public class Main {
 
         List<ReservationManager> listOfReservationManager = new ArrayList<>();
 
-
-
-        //Celkový počet rezervací s jedním hostem
-        System.out.println("Celkový počet rezervací s jedním hostem: " + reservationManager.getTotalCountOfReservationWithOneGuest());
-
-        //Celkový počet rezervací se dvěma  hosty
-        System.out.println("Celkový počet rezervací se dvěma  hosty: " + reservationManager.getTotalCountOfReservationWithTwoGuests());
-
-        //Celkový počet rezervací s více než dvěma  hosty
-        System.out.println("Celkový počet rezervací s více než dvěma  hosty: " + reservationManager.getTotalCountOfReservationWithMoreThanTwoGuests());
-
-
         System.out.println("______________");
         //SOUHRN!!!
 
@@ -149,6 +104,9 @@ public class Main {
         //Počet rezervací s pracovním pobytem
         System.out.println("Počet rezervací s pracovním pobytem: " + reservationManager.getNumberOfWorkingReservation());
 
+
+
+        System.out.println("______________");
         //Průměrný počet hostů na rezervaci
         System.out.println("Průměrný počet hostů na rezervaci: " + reservationManager.getAverageGuests());
 
@@ -157,13 +115,17 @@ public class Main {
             System.out.println(reservationManager.getRecreationalReservation());
 
         //Celkový počet rezervací s jedním hostem
-        System.out.println("Celkový počet rezervací s jedním hostem: " + reservationManager.getTotalCountOfReservationWithOneGuest());
+        System.out.println("Celkový počet rezervací s jedním hostem: " +
+                reservationManager.getTotalCountOfReservationWithNumOfGuests(1));
 
         //Celkový počet rezervací se dvěma  hosty
-        System.out.println("Celkový počet rezervací se dvěma  hosty: " + reservationManager.getTotalCountOfReservationWithTwoGuests());
+        System.out.println("Celkový počet rezervací se dvěma  hosty: " +
+                reservationManager.getTotalCountOfReservationWithNumOfGuests(2));
 
         //Celkový počet rezervací s více než dvěma  hosty
-        System.out.println("Celkový počet rezervací s více než dvěma  hosty: "+ reservationManager.getTotalCountOfReservationWithMoreThanTwoGuests());
+        System.out.println("Celkový počet rezervací s více než dvěma  hosty: "+
+                        reservationManager.getTotalCountOfReservationWithNumOfGuests(3));
+
 
 
 

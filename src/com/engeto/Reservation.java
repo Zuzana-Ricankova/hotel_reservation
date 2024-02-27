@@ -3,6 +3,7 @@ package com.engeto;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,9 +18,8 @@ public class Reservation {
     private Integer numberOfGuests;
     private long reservationLength;
     private int price;
-    private List<Room> listOfRooms;
+
     private Integer number;
-    private Integer totalNumberOfGuests;
 
 
 
@@ -40,7 +40,6 @@ public class Reservation {
     }
 
 
-    ///region getter
 
 
     public Integer getNumberOfGuests() {
@@ -73,11 +72,11 @@ public class Reservation {
 
     }
 
-    //total number of guests(from all reservations)
-    public Integer getTotalNumberOfGuests() {
-        totalNumberOfGuests = listOfGuests.size();
-        return totalNumberOfGuests;
-    }
+    /**
+     * method returns total number of guests
+     * @return total number of guests
+     */
+
 
     public long getReservationLength() {
         long reservationLength;
@@ -91,7 +90,7 @@ public class Reservation {
         price = (number)*(getRoom().getPricePerNight());
         return price;
     }
-    ///endregion getter
+
 
 
 

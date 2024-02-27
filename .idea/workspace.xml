@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efe57a8c-499f-4588-805b-8a3042cc3c80" name="Changes" comment="Přidané funknčí výpisy rezervací.">
-      <change afterPath="$PROJECT_DIR$/src/com/engeto/ReservationManager.java" afterDir="false" />
+    <list default="true" id="efe57a8c-499f-4588-805b-8a3042cc3c80" name="Changes" comment="3. úkol">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Guest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/ReservationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/ReservationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/TypeOfVacation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/TypeOfVacation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,13 +78,33 @@
       <option name="project" value="LOCAL" />
       <updated>1707500258300</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="3. úkol">
+      <option name="closed" value="true" />
+      <created>1708281089999</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708281090000</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nedaří se mi přidat druhého hosta ze seznamu" />
     <MESSAGE value="Opraveno" />
     <MESSAGE value="Přidané funknčí výpisy rezervací." />
-    <option name="LAST_COMMIT_MESSAGE" value="Přidané funknčí výpisy rezervací." />
+    <MESSAGE value="3. úkol" />
+    <option name="LAST_COMMIT_MESSAGE" value="3. úkol" />
   </component>
 </project>
