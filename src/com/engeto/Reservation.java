@@ -1,50 +1,36 @@
 package com.engeto;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class Reservation {
     private Room room;
     private List<Guest> listOfGuests;
+    private Guest anotherGuest;
     private LocalDate dateStart;
     private LocalDate dateEnd;
     private TypeOfVacation typeOfVacation;
-
     private int indexOfReservation;
-    private Integer numberOfGuests;
-    private long reservationLength;
     private int price;
-
-    private Integer number;
-
+    private int guestCount;
 
 
-
-
-
-    public Reservation(int indexOfReservation, Room room, List<Guest> listOfGuests, Integer numberOfGuests, LocalDate dateStart,
-                       LocalDate dateEnd, TypeOfVacation typeOfVacation) {
+    public Reservation(int indexOfReservation, Room room, List<Guest> listOfGuests, Guest anotherGuest, LocalDate dateStart,
+                       LocalDate dateEnd, TypeOfVacation typeOfVacation, int guestCount) {
 
         this.indexOfReservation = indexOfReservation;
         this.room = room;
         this.listOfGuests = listOfGuests;
-        this.numberOfGuests = numberOfGuests;
+        this.anotherGuest = anotherGuest;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.typeOfVacation = typeOfVacation;
+        this.guestCount = guestCount;
 
     }
 
 
-
-
-    public Integer getNumberOfGuests() {
-        return numberOfGuests;
-    }
 
     public int getIndexOfReservation() {
         return indexOfReservation;
@@ -57,6 +43,10 @@ public class Reservation {
     public List<Guest> getListOfGuests() {
         return listOfGuests;
 
+    }
+
+    public Guest getAnotherGuest() {
+        return anotherGuest;
     }
 
     public LocalDate getDateStart() {
@@ -86,25 +76,25 @@ public class Reservation {
         return number;
     }
 
-    public long getPrice() {
-        price = (number)*(getRoom().getPricePerNight());
+    public int getPrice() {
+        price = ((int)getReservationLength())*(getRoom().getPricePerNight());
         return price;
     }
 
+    public int getNumberOfGuests(){
+        return guestCount;
 
-
-
-
+    }
 
 
     public String toString() {
+        String isRoomSeaView = null;
+        if(room.getSea().equals(true))  isRoomSeaView = "ano";
 
 
-
-        return "Reservation: " +dateStart + ", till " + dateEnd +
-                ", Guest: " + listOfGuests.toString() +
-                " Room: " + room.getNumberOFTheRoom() +
-                ", Is it leasure travel: " + getTypeOfVacation() +
+        return  dateStart + " až " + dateEnd + ": " +
+                 listOfGuests.toString() +
+                "[" + room.getNumberOFTheRoom() + ", " + isRoomSeaView + "]" + " za " + getPrice() + " Kč" +
                 ".\n";
 
     }

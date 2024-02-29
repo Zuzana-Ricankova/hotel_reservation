@@ -1,5 +1,7 @@
 package com.engeto;
 
+import java.math.BigDecimal;
+
 public class Room {
     private Integer numberOFTheRoom;
    private  Integer beds;

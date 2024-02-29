@@ -10,7 +10,6 @@ import static com.engeto.TypeOfVacation.RECREATIONAL_STAY;
 
 public class ReservationManager {
     private List<Reservation> listOfReservation = new ArrayList<>();
-    private List<Guest> listOfGuests;
     private Double averageGuests;
 
 
@@ -21,10 +20,12 @@ public class ReservationManager {
     }
 
 
+
     //get
     public List<Reservation> getListOfReservation() {
         return listOfReservation;
     }
+
 
 
     //clear
@@ -50,20 +51,28 @@ public class ReservationManager {
         return count;
     }
 
+    public double getAverageGuests(){
+        double averageGuests=0;
+        for(Reservation reservation : listOfReservation){
+            averageGuests += Double.valueOf(reservation.getNumberOfGuests());
+        }
+        averageGuests = averageGuests/listOfReservation.size();
+        return averageGuests;
 
-
-    public Double getAverageGuests() {
-        int totalNumberOfGuests = 0;
-        for (Reservation reservation : listOfReservation) {
-            if (reservation.getNumberOfGuests() == 1) {
-                totalNumberOfGuests++;
-                if (reservation.getNumberOfGuests()==2){totalNumberOfGuests = totalNumberOfGuests +2;
-
-            }
-        }}
-
-     return averageGuests = (double) totalNumberOfGuests / listOfReservation.size();
     }
+
+//    public Double getAverageGuests() {
+//        int totalNumberOfGuests = 0;
+//        for (Reservation reservation : listOfReservation) {
+//            if (reservation.getNumberOfGuests() == 1) {
+//                totalNumberOfGuests++;
+//                if (reservation.getNumberOfGuests()==2){totalNumberOfGuests = totalNumberOfGuests +2;
+//
+//            }
+//        }}
+//
+//     return averageGuests = (double) totalNumberOfGuests / listOfReservation.size();
+//    }
 
 
     public String getRecreationalReservation() {
@@ -95,7 +104,6 @@ public class ReservationManager {
 
     @Override
     public String toString() {
-        return "List of reservations: \n" +  listOfReservation +
-                ", listOfGuests=" + listOfGuests ;
+        return "List of reservations: \n" +  listOfReservation;
     }
 }
